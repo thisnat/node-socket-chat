@@ -1,0 +1,15 @@
+.chatbox{
+    background-color: whitesmoke;
+    margin-top: 30px;
+    height: 500px;
+    max-height: 500px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    overflow: scroll;
+}
+
+.chatbox p{
+    font-size: 20px;
+}
