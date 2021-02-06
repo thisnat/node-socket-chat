@@ -10,6 +10,7 @@ socket.on("connect", () => {
   let sendBtn = document.getElementById("sendBtn").addEventListener("click", () => {
     let chatBox = document.getElementById("chatbox");
     let chat = document.createElement("p");
+    let chatType = document.createElement("div")
     let name = nameInput.value;
     let msg = msgInput.value;
     let chatMsg = `${name} : ${msg}`;
@@ -17,8 +18,12 @@ socket.on("connect", () => {
     console.log(chatMsg);
 
     socket.emit("chat", chatMsg);
-    chat.innerText = chatMsg;
-    chatBox.appendChild(chat);
+
+    chat.setAttribute("class","bubble-s")
+    chat.innerText = `💬 ${msg}`;
+    chatType.setAttribute("dir","rtl")
+    chatType.appendChild(chat);
+    chatBox.appendChild(chatType);
 
     //clear input msg
     msgInput.value = "";
@@ -30,6 +35,9 @@ socket.on("chat", (msg) => {
 
   let chatBox = document.getElementById("chatbox");
   let chat = document.createElement("p");
+  let chatType = document.createElement("div")
+  chat.setAttribute("class","bubble-r")
   chat.innerText = msg;
-  chatBox.appendChild(chat);
+  chatType.appendChild(chat);
+  chatBox.appendChild(chatType);
 });

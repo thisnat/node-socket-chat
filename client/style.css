@@ -1,15 +1,29 @@
-.chatbox{
-    background-color: whitesmoke;
-    margin-top: 30px;
-    height: 500px;
-    max-height: 500px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 10px;
-    padding-bottom: 25px;
-    overflow: scroll;
+.chatbox {
+  background-color: whitesmoke;
+  margin-top: 30px;
+  height: 500px;
+  max-height: 600px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 25px;
+  overflow: scroll;
 }
 
-.chatbox p{
-    font-size: 20px;
+.chatbox p {
+  font-size: 20px;
+}
+
+.bubble-r {
+    display: inline-block;
+  background-color: lightblue;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.bubble-s {
+    display: inline-block;
+    background-color: lightgreen;
+    padding: 10px;
+    border-radius: 10px;
 }
