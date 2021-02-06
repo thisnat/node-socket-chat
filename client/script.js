@@ -20,7 +20,7 @@ socket.on("connect", () => {
     socket.emit("chat", chatMsg);
 
     chat.setAttribute("class","bubble-s")
-    chat.innerText = `💬 ${msg}`;
+    chat.innerText = msg;
     chatType.setAttribute("dir","rtl")
     chatType.appendChild(chat);
     chatBox.appendChild(chatType);
