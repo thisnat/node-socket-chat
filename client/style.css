@@ -18,12 +18,24 @@
   display: inline-block;
   background-color: lightblue;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 .bubble-s {
   display: inline-block;
   background-color: lightgreen;
   padding: 10px;
+  border-radius: 15px;
+}
+
+.input-container {
+  float: right;
+  margin-top: 10px;
+}
+
+.input-container input {
+  padding: 7px;
   border-radius: 10px;
+  border: 1px solid #aaa;
+  outline: none;
 }

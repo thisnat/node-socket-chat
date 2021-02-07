@@ -21,7 +21,7 @@ const displayBubble = (msg,type) => {
 
 socket.on("connect", () => {
   console.log("connect!");
-  document.getElementById("status").innerText = "connect server แล้ว!";
+  document.getElementById("status").innerText = "connect server แล้ว! ✅";
   let nameInput = document.getElementById("nameInput");
   let msgInput = document.getElementById("msgInput");
 
