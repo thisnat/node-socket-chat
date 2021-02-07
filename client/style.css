@@ -15,15 +15,15 @@
 }
 
 .bubble-r {
-    display: inline-block;
+  display: inline-block;
   background-color: lightblue;
   padding: 10px;
   border-radius: 10px;
 }
 
 .bubble-s {
-    display: inline-block;
-    background-color: lightgreen;
-    padding: 10px;
-    border-radius: 10px;
+  display: inline-block;
+  background-color: lightgreen;
+  padding: 10px;
+  border-radius: 10px;
 }
