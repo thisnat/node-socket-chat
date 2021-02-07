@@ -10,9 +10,9 @@ const io = require("socket.io")(http,{
 io.on("connection", (socket) => {
     console.log("user connected");
     
-    socket.on("chat", (msg) => {
-        console.log(msg);
-        socket.broadcast.emit("chat", msg)
+    socket.on("chat", (msg,name) => {
+        console.log(`${name} says ${msg}`);
+        socket.broadcast.emit("chat",`${name}|${msg}`)
     });
 
     socket.on("disconnect", () => {
