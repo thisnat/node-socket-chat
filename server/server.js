@@ -7,6 +7,13 @@ const io = require("socket.io")(http,{
     }
 });
 
+app.use(express.static(__dirname + "/../client/"));
+
+app.get("/",(req,res) => {
+    const stream = fs.createReadStream(__dirname + "/../client/index.html");
+    stream.pipe(res);
+});
+
 io.on("connection", (socket) => {
     console.log("user connected");
     
@@ -20,4 +27,4 @@ io.on("connection", (socket) => {
     });
 });
 
-http.listen(3001, () => {console.log("app running at port 3001");});
+http.listen(3001, () => {console.log("server running at port 3001");});
