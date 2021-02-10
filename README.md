@@ -8,4 +8,4 @@ cd server
 node server.js
 ```
 ## client
-เปิด folder client > เปิดไฟล์ index.html
+http://localhost:3001/
