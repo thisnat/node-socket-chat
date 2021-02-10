@@ -1,8 +1,9 @@
 .chatbox {
-  background-color: #cbe7da;
+  background-color: rgb(205, 238, 252);
+  border-radius: 20px;
   margin-top: 30px;
-  height: 700px;
-  max-height: 800px;
+  height: 550px;
+  max-height: 700px;
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 10px;
@@ -33,6 +34,7 @@
 .input-container {
   float: right;
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .input-container input {

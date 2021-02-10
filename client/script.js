@@ -4,7 +4,7 @@ let socket = io(url);
 const displayBubble = (msg,type,name) => {
   let chatBox = document.getElementById("chatbox");
   let chat = document.createElement("p");
-  let chatType = document.createElement("div") //chat bubble
+  let chatType = document.createElement("div"); //chat bubble
 
   if (type === "s"){
     chatType.setAttribute("dir", "rtl")
@@ -23,6 +23,8 @@ const displayBubble = (msg,type,name) => {
   chat.innerText = msg;
   chatType.appendChild(chat);
   chatBox.appendChild(chatType);
+
+  chatBox.scrollTo(0, chatBox.scrollHeight);
 }
 
 socket.on("connect", () => {
