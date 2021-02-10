@@ -8,4 +8,4 @@ cd server
 node server.js
 ```
 ## client
-http://localhost:3001/
+access at http://localhost:3001/
