@@ -16,6 +16,12 @@ app.get("/",(req,res) => {
 
 io.on("connection", (socket) => {
     console.log("user connected");
+
+    socket.on("join", () => {
+        socket.broadcast.emit("join");
+    });
+
+    socket.on("left", () => {});
     
     socket.on("chat", (msg,name) => {
         let pack = {
@@ -23,11 +29,12 @@ io.on("connection", (socket) => {
             msg:msg
         }
         console.log(`${name} says ${msg}`);
-        socket.broadcast.emit("chat",pack)
+        socket.broadcast.emit("chat",pack);
     });
 
     socket.on("disconnect", () => {
         console.log("user disconnected");
+        socket.broadcast.emit("left");
     });
 });
 
