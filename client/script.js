@@ -41,6 +41,8 @@ const displayStatus = (type) => {
   }
   statusBubble.appendChild(statusText);
   chatBox.appendChild(statusBubble);
+
+  chatBox.scrollTo(0, chatBox.scrollHeight);
 }
 
 socket.on("connect", () => {
