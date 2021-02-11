@@ -49,10 +49,8 @@ socket.on("connect", () => {
   });
 });
 
-socket.on("chat", (msg) => {
-  let name = msg.split("|")[0];
-  let text = msg.split("|")[1];
-  console.log(`${name} says ${text}`);
+socket.on("chat", (pack) => {
+  console.log(`${pack.name} says ${pack.msg}`);
 
-  displayBubble(text,"r",name);
+  displayBubble(pack.msg,"r",pack.name);
 });

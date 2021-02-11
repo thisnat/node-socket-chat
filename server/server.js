@@ -18,8 +18,12 @@ io.on("connection", (socket) => {
     console.log("user connected");
     
     socket.on("chat", (msg,name) => {
+        let pack = {
+            name:name,
+            msg:msg
+        }
         console.log(`${name} says ${msg}`);
-        socket.broadcast.emit("chat",`${name}|${msg}`)
+        socket.broadcast.emit("chat",pack)
     });
 
     socket.on("disconnect", () => {
