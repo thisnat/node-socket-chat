@@ -27,8 +27,26 @@ const displayBubble = (msg,type,name) => {
   chatBox.scrollTo(0, chatBox.scrollHeight);
 }
 
+const displayStatus = (type) => {
+  let chatBox = document.getElementById("chatbox");
+  let statusText = document.createElement("p");
+  let statusBubble = document.createElement("div");
+  statusBubble.setAttribute("class","statusBubble");
+  statusText.setAttribute("class","status");
+  if(type === "j"){
+    statusText.innerText = "a user join";
+  }
+  else{
+    statusText.innerText = "a user disconnect";
+  }
+  statusBubble.appendChild(statusText);
+  chatBox.appendChild(statusBubble);
+}
+
 socket.on("connect", () => {
   console.log("connect!");
+  socket.emit("join");
+
   document.getElementById("status").innerText = "connect server แล้ว! ✅";
   let nameInput = document.getElementById("nameInput");
   let msgInput = document.getElementById("msgInput");
@@ -53,4 +71,14 @@ socket.on("chat", (pack) => {
   console.log(`${pack.name} says ${pack.msg}`);
 
   displayBubble(pack.msg,"r",pack.name);
+});
+
+socket.on("join", () => {
+  console.log("a user join");
+  displayStatus("j");
+});
+
+socket.on("left", () =>{
+  console.log("a user disconnect");
+  displayStatus("d");
 });

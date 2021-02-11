@@ -31,6 +31,19 @@
   border-radius: 15px;
 }
 
+.status {
+  display: inline-block;
+  color: white;
+  font-style: italic;
+  background-color:rgba(0,0,0,0.2);
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.statusBubble {
+  text-align: center;
+}
+
 .input-container {
   float: right;
   margin-top: 10px;
